@@ -1,7 +1,9 @@
 CREATE DATABASE startersql;
 Query OK, 1 row affected (0.01 sec)
+
 USE startersql;
 Database changed
+
 CREATE TABLE book(
     bookID INT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -10,6 +12,7 @@ CREATE TABLE book(
     yearPublished INT
 );
 Query OK, 0 rows affected (0.05 sec)
+
 INSERT INTO book(bookID,title,author,publisher,yearPublished)
 VALUES
 (1,'wings of fire','DR.A.P.J.Abdul Kalam','Universities Press',1999),
@@ -17,6 +20,7 @@ VALUES
 (3,'Gitanjali','Rabindranath Tagore','Macmillan',1910);
 Query OK, 3 rows affected (0.04 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+
 CREATE TABLE member(
     memberID INT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -25,6 +29,7 @@ CREATE TABLE member(
     Email VARCHAR(255)
 );
 Query OK, 0 rows affected (0.05 sec)
+
 INSERT INTO member(memberID,name,address,phoneNumber,Email)
 VALUES
 (1,'abc','sangamner','9876543211','abc@gmail.com'),
@@ -32,6 +37,7 @@ VALUES
 (3,'xyz','pune','9876543345','xyz@gmail.com');
 Query OK, 3 rows affected (0.01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+
 CREATE TABLE loan(
     loanID INT PRIMARY KEY,
     bookID INT,
@@ -42,6 +48,7 @@ CREATE TABLE loan(
     FOREIGN KEY(memberID) REFERENCES member(memberID)
 );
 Query OK, 0 rows affected (0.06 sec)
+
 INSERT INTO loan(loanID,bookID,memberID,loanDate,returnDate)
 VALUES
 (1,1,1,'2025-02-01','2025-02-15'),
