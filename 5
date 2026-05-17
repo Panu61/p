@@ -1,7 +1,9 @@
 CREATE DATABASE dbms;
 Query OK, 1 row affected (0.01 sec)
+
 USE dbms;
 Database changed
+
 CREATE TABLE emp_info1(
     empno INTEGER PRIMARY KEY,
     name VARCHAR(50),
@@ -9,6 +11,7 @@ CREATE TABLE emp_info1(
     empsal INTEGER
 );
 Query OK, 0 rows affected (0.03 sec)
+
 INSERT INTO emp_info1
 VALUES
 (1,'ram',5,20000),
@@ -33,6 +36,7 @@ CREATE TABLE dept(
     loc VARCHAR(50)
 );
 Query OK, 0 rows affected (0.06 sec)
+
 INSERT INTO dept
 VALUES
 (5,'IT','hyb'),
@@ -57,10 +61,12 @@ FOREIGN KEY(deptno)
 REFERENCES dept(deptno);
 Query OK, 3 rows affected (0.16 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+
 ALTER TABLE emp_info1
 DROP CONSTRAINT fk;
 Query OK, 0 rows affected (0.08 sec)
 Records: 0  Duplicates: 0  Warnings: 0
+
 INSERT INTO emp_info1
 VALUES
 (8,'RAM',8,50000);
